@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   # get "/my_recipe", controller: "recipes", action: "first_recipe"
 
   get "/first_contact", controller: "contacts", action: "get_first_contact"
+
+  get "/all_contacts", controller: "contacts", action: "all"
 end
