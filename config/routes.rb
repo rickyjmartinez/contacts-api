@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   # get "/my_recipe", controller: "recipes", action: "first_recipe"
 
-  get "/first_contact", controller: "contacts", action: "get_first_contact"
+  get "/contacts/:id", controller: "contacts", action: "show"
 
-  get "/all_contacts", controller: "contacts", action: "all"
+  get "/contacts", controller: "contacts", action: "index"
+
+  post "/contacts" => "contacts#create"
 end

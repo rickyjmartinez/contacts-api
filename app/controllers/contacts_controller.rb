@@ -13,13 +13,26 @@ class ContactsController < ApplicationController
   #   }
   # end
 
-  def all
+  def index
     @contacts = Contact.all
-    render template: "contacts/index"
+    render :index
   end
 
-  def get_first_contact
+  def show
     @contact = Contact.first
-    render template: "contacts/show"
+    render :show
+  end
+
+  #In your contacts app, allow the user to save/see an address for their contacts
+  #save = create?
+  #add another column "address"
+  def create
+    @contact = Contact.create(
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      email: params[:email],
+      phone_number: params[:phone_number],
+    )
+    render :show
   end
 end
